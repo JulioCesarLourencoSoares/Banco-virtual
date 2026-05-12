@@ -1,5 +1,9 @@
 // banco.js - Sistema de Banco Virtual
+<<<<<<< HEAD
 let nomeBanco = "BANCO VIRTUAL S.A."; // <- linha do conflito
+=======
+let nomeBanco = "BANCO DIGITAL PLUS"; // <- linha do conflito
+>>>>>>> 8e1282ac2110475abe1a6f7754b4b11b602ca33f
 let contas = [];
 function criarConta(titular, saldoInicial) {
   let conta = { titular: titular, saldo: saldoInicial, ativa: true };
@@ -59,6 +63,7 @@ depositar(1, 200);
 sacar(2, 100);
 listarContas();
 
+<<<<<<< HEAD
 // Membro 4 — atualiza nomeBanco e adiciona extrato()
 function extrato(indice) {
 if (indice < 1 || indice > contas.length) {
@@ -72,3 +77,17 @@ console.log("Status : " + (c.ativa ? "Ativa" : "Encerrada"));
 }
 // Teste final
 extrato(1);
+=======
+// Membro 3 — atualiza nomeBanco e adiciona encerrarConta()
+function encerrarConta(indice) {
+if (indice < 1 || indice > contas.length) {
+console.log("Conta não encontrada."); return;
+}
+contas[indice - 1].ativa = false;
+console.log("Conta de " + contas[indice-1].titular + " encerrada.");
+}
+// Teste
+criarConta("Carla Mendes", 750);
+encerrarConta(2);
+listarContas();
+>>>>>>> 8e1282ac2110475abe1a6f7754b4b11b602ca33f
